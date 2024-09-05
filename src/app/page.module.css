@@ -3,8 +3,45 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  /* padding: 6rem; */
   min-height: 100vh;
+}
+
+.gradientImage {
+  height: auto;
+  max-height: 600px;
+  min-width: 100vw;
+  max-width: 150vw;
+  object-fit: cover;
+  user-select: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  user-select: none;
+  height: 0;
+  padding: 0;
+  /* This seems to allow the container height to be dynamic. Once content is in here, confirm if this needs changed. Hopefully not. */
+  padding-bottom: 38%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('/header_gradient.svg');
+}
+
+.gradientSection {
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(
+      105deg,
+      rgba(28, 30, 43, 1),
+      rgba(80, 87, 105, 1) 55%,
+      rgba(255, 255, 255, 0) 95%
+    )
+    no-repeat border-box;
+  /* background-image: url('/header_bottom_curve.svg'); */
+  /* background-position: bottom; */
 }
 
 .description {
@@ -98,7 +135,7 @@
 
 .center::before,
 .center::after {
-  content: "";
+  content: '';
   left: 50%;
   position: absolute;
   filter: blur(45px);

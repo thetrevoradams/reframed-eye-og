@@ -1,42 +1,49 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import styles from './page.module.css';
+import { Text } from './components/Text';
 
 export default function Home() {
   return (
     <main className={styles.main}>
+      <header>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className={styles.gradientImage}
+          src="/header_gradient.svg"
+          alt=""
+          fetchPriority="high"
+        />
+      </header>
+      <section>
+        <Text el="h2">section 2</Text>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className={styles.gradientImage}
+          src="/section_gradient_724.svg"
+          alt=""
+          fetchPriority="high"
+        />
+      </section>
+      <section>
+        <Text el="h2">section 3</Text>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className={styles.gradientImage}
+          src="/section_gradient_615.svg"
+          alt=""
+          fetchPriority="high"
+        />
+      </section>
       <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
+        <Text el="h1">Get started by editing</Text>
         <div>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
+            By{' '}
           </a>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
       </div>
 
       <div className={styles.grid}>
