@@ -1,102 +1,22 @@
 import styles from './page.module.css';
-import { Text } from './components/Text';
+import Header from './components/Header';
+import BookAppointment from './components/BookAppointment';
+import Testimonials from './components/Testimonials';
+import OurServices from './components/OurServices';
+import OrderContacts from './components/OrderContacts';
+import Footer from './components/Footer';
+import FabList from './components/FabList';
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <header>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          className={styles.gradientImage}
-          src="/header_gradient.svg"
-          alt=""
-          fetchPriority="high"
-        />
-      </header>
-      <section>
-        <Text el="h2">section 2</Text>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          className={styles.gradientImage}
-          src="/section_gradient_724.svg"
-          alt=""
-          fetchPriority="high"
-        />
-      </section>
-      <section>
-        <Text el="h2">section 3</Text>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          className={styles.gradientImage}
-          src="/section_gradient_615.svg"
-          alt=""
-          fetchPriority="high"
-        />
-      </section>
-      <div className={styles.description}>
-        <Text el="h1">Get started by editing</Text>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <FabList />
+      <Header />
+      <BookAppointment />
+      <Testimonials />
+      <OurServices />
+      <OrderContacts />
+      <Footer />
     </main>
   );
 }

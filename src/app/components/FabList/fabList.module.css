@@ -1,0 +1,31 @@
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.fabWrapper {
+  transform: translateX(-100%);
+  position: fixed;
+  top: 20dvh;
+  left: 0;
+  padding: 10px 5px;
+  border: 2px solid #e87951;
+  border-left: 0;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  background-color: #fcefea;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  z-index: 100;
+  animation: slideIn 0.5s ease-in-out 1.5s forwards;
+}
+.fabWrapper a {
+  padding: 0.5rem;
+}
