@@ -1,0 +1,48 @@
+.footer {
+  background-color: #f3f3f3;
+  width: 100%;
+  display: flex;
+  padding: 4rem 20px;
+  justify-content: center;
+}
+.wrapper {
+  max-width: 830px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 80px;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  max-width: 415px;
+}
+
+.button {
+  margin-top: 10px;
+}
+
+.iconWrapper {
+  display: inline-flex;
+  gap: 10px;
+}
+.image {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 15px;
+  height: auto;
+  max-width: 95vw;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    flex-wrap: wrap;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}

@@ -1,0 +1,20 @@
+.button {
+  /* account for the right chevron sizing */
+  padding: 10px 12px 10px 25px;
+  border-radius: 47px;
+  border: 1px solid var(--primary);
+  background-color: var(--primary);
+  color: white;
+  font-size: 18px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+.button.outlined {
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+.button.outlined svg path {
+  stroke: var(--primary);
+}

@@ -12,6 +12,8 @@ import { StyledText } from './styles';
 
 export interface TextProps {
   el: TextElement;
+  className?: string;
+  center?: boolean;
   styleAs?: TextElement;
   weight?: FontWeight;
   children?: ReactNode;
@@ -45,7 +47,14 @@ export function getDefaultSize(el: TextElement) {
   }
 }
 
-export const Text = ({ el, styleAs, weight, children }: TextProps) => {
+export const Text = ({
+  el,
+  styleAs,
+  weight,
+  center,
+  className,
+  children,
+}: TextProps) => {
   const isHeader = isHeaderEl(el);
   const size = getDefaultSize(styleAs ?? el);
 
@@ -55,6 +64,8 @@ export const Text = ({ el, styleAs, weight, children }: TextProps) => {
       size={size}
       weight={weight}
       isHeader={isHeader}
+      center={center}
+      className={className}
     >
       {children}
     </StyledText>

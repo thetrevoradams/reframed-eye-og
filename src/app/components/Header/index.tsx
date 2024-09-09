@@ -10,8 +10,6 @@ const Header = () => {
         alt=""
         fetchPriority="high"
       />
-      <Text el="h2">Hi there</Text>
-      <Text el="p">Here is some text</Text>
     </header>
   );
 };

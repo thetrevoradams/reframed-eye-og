@@ -8,7 +8,7 @@ export const marcellus = Marcellus({
 });
 
 export const manrope = Manrope({
-  weight: ['400', '700'],
+  weight: ['300', '700'],
   display: 'swap',
   subsets: ['latin'],
   variable: '--font-manrope',
