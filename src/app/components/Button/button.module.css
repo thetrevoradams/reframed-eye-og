@@ -9,12 +9,29 @@
   display: flex;
   gap: 10px;
   flex-wrap: nowrap;
+  transition: background-color 0.5s;
+  width: max-content;
 }
+
+.button:hover {
+  background-color: rgba(227, 91, 43, 0.8);
+}
+
 .button.outlined {
+  transition: background-color 0.5s, color 0.5s;
   background-color: transparent;
   border: 1px solid var(--primary);
   color: var(--primary);
 }
+
+.button.outlined:hover {
+  color: white;
+  background-color: rgba(227, 91, 43, 0.8);
+}
 .button.outlined svg path {
+  transition: stroke 0.5s;
   stroke: var(--primary);
+}
+.button.outlined:hover svg path {
+  stroke: white;
 }

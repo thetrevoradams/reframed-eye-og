@@ -12,6 +12,9 @@ import Phone from '@/app/icons/phone.svg';
 import MapPin from '@/app/icons/map-pin.svg';
 import { getMapUrl } from '@/utils/getMapUrl';
 import Image from 'next/image';
+import Youtube from '@/app/icons/youtube.svg';
+import Instagram from '@/app/icons/instagram.svg';
+import Facebook from '@/app/icons/facebook.svg';
 
 const Footer = () => {
   const mapUrl = getMapUrl();
@@ -60,6 +63,17 @@ const Footer = () => {
               className={style.image}
             />
           </a>
+          <div className={style.row}>
+            <a href="https://www.facebook.com/profile.php?id=61561251600120">
+              <Facebook />
+            </a>
+            <a href="https://www.instagram.com/reframedeye/">
+              <Instagram />
+            </a>
+            <a href="https://www.youtube.com/channel/UC5qm6k0SoiEnhNG4I8xeWrQ">
+              <Youtube />
+            </a>
+          </div>
         </section>
       </div>
     </footer>

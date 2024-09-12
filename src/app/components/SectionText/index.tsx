@@ -6,9 +6,12 @@ import { TextElement } from '../Text/types';
 
 interface SectionTextProps {
   heading: string;
-  content: string | ReactNode;
+  content?: string | ReactNode;
   headingEl?: TextElement;
   contentEl?: TextElement;
+  className?: string;
+  contentClassName?: string;
+  noHorizontalPadding?: boolean;
 }
 
 const SectionText = ({
@@ -16,16 +19,29 @@ const SectionText = ({
   headingEl = 'h2',
   content,
   contentEl = 'p',
+  className,
+  contentClassName,
+  noHorizontalPadding = false,
 }: SectionTextProps) => {
   return (
-    <div className="centerColumnContent maxTextContent horizontalPadding">
+    <div
+      className={`centerColumnContent maxTextContent ${
+        noHorizontalPadding ? '' : 'horizontalPadding'
+      } ${className ?? ''}`}
+    >
       <Text el={headingEl} center className={styles.heading}>
         {heading}
       </Text>
       <Divider />
-      <Text el={contentEl} center className={styles.content}>
-        {content}
-      </Text>
+      {content && (
+        <Text
+          el={contentEl}
+          center
+          className={`${styles.content} ${contentClassName ?? ''}`}
+        >
+          {content}
+        </Text>
+      )}
     </div>
   );
 };

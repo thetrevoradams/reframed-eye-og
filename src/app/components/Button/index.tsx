@@ -4,11 +4,13 @@ import RightChevron from '@/app/icons/chevron-right.svg';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'filled' | 'outlined';
+  className?: string;
   children: ReactNode;
 }
 
 export const Button = ({
   variant = 'filled',
+  className,
   children,
   ...props
 }: ButtonProps) => {
@@ -16,7 +18,7 @@ export const Button = ({
     <button
       className={`${styles.button} ${
         variant === 'outlined' && styles.outlined
-      }`}
+      } ${className ?? ''}`}
       {...props}
     >
       {children}

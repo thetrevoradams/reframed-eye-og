@@ -3,9 +3,13 @@ import './globals.css';
 import { manrope, marcellus } from './fonts';
 
 export const metadata: Metadata = {
-  title: 'Reframed Eye Optometry',
-  description:
-    'Comprehensive eye care services at Reframed Eye, a new optometry practice coming soon to Idaho Falls, Idaho. From routine eye exams to specialized treatments, our experienced optometrists are dedicated to preserving your vision and eye health. Stay tuned for the grand opening and book your first appointment with our experienced team!',
+  openGraph: {
+    type: 'website',
+    url: 'https://reframedeye.com',
+    title: 'Reframed Eye Optometry',
+    description:
+      'Comprehensive eye care services at Reframed Eye, a new optometry practice coming soon to Idaho Falls, Idaho. Glasses, contacts, eye exams, low vision evaluations and more! Schedule online or call 208-557-3222.',
+  },
 };
 
 export default function RootLayout({
