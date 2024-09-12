@@ -1,7 +1,7 @@
 'use client';
 
 export const getOS = () => {
-  if (!window) {
+  if (typeof window === 'undefined') {
     return 'Other';
   }
 
