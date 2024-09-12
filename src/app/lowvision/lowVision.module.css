@@ -1,0 +1,9 @@
+.lowVisionContent p,
+.lowVisionContent button {
+  font-size: 400%;
+}
+
+.lowVisionContent button {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}

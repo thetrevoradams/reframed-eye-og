@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 import FabList from './components/FabList';
 import Head from 'next/head';
 import { useRef } from 'react';
-import NowHiringModal from './components/NowHiringModal';
+// import NowHiringModal from './components/NowHiringModal';
 
 export default function Home() {
   const serviceSectionRef = useRef<HTMLElement>(null);
