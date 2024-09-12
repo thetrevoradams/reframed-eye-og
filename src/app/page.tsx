@@ -9,22 +9,12 @@ import OrderContacts from './components/OrderContacts';
 import Footer from './components/Footer';
 import FabList from './components/FabList';
 import Head from 'next/head';
-import { useLayoutEffect, useRef, useState } from 'react';
-import SimpleModal from './components/SimpleModal';
-import Cookies from 'js-cookie';
+import { useRef } from 'react';
+import NowHiringModal from './components/NowHiringModal';
 
 export default function Home() {
   const serviceSectionRef = useRef<HTMLElement>(null);
-  const [showHiringModal, setShowHiringModal] = useState(false);
 
-  useLayoutEffect(() => {
-    const skipJobOfferModal = Cookies.get('skipJobOfferModal');
-    if (!skipJobOfferModal) {
-      setShowHiringModal(true);
-    }
-  }, []);
-
-  // TODO: Add meta tags for title, description, og, etc.
   return (
     <>
       <Head>
@@ -43,14 +33,7 @@ export default function Home() {
         <OurServices ref={serviceSectionRef} />
         <OrderContacts />
         <Footer />
-        <SimpleModal
-          isOpen={showHiringModal}
-          closeModal={() => setShowHiringModal(false)}
-          title="Now hiring opticians with experience."
-          actionText="Ok"
-          showJobOfferContent
-          showPermanentDismiss
-        />
+        {/* <NowHiringModal /> */}
       </main>
     </>
   );

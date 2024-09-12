@@ -11,7 +11,7 @@ const OurServices = forwardRef(function OurServices(
     <section className="sectionSpacing centerColumnContent" ref={ref}>
       <SectionText
         heading="Our services"
-        content="Ready to prioritize your eye health? Our team of expert optometrists is
+        content="Ready to prioritize your eye health? Our team of experts is
         here to guide you every step of the way. From comprehensive eye exams to
         specialized treatments, we're dedicated to ensuring your vision is
         clear and your eyes are healthy."

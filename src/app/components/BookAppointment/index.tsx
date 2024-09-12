@@ -3,7 +3,7 @@ import {
   phoneNumberDisplayed,
   phoneNumberLink,
   scheduleLink,
-} from '@/utils/constants';
+} from '@/app/utils/constants';
 import SectionText from '../SectionText';
 
 const BookAppointment = () => {

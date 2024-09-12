@@ -1,14 +1,21 @@
 'use client';
 
 import styles from './fabList.module.css';
-import { getMapUrl } from '@/utils/getMapUrl';
-import { phoneNumberLink, scheduleLink } from '@/utils/constants';
+import { getMapUrl } from '@/app/utils/getMapUrl';
+import { phoneNumberLink, scheduleLink } from '@/app/utils/constants';
 import Calendar from '@/app/icons/calendar.svg';
 import Phone from '@/app/icons/phone.svg';
 import MapPin from '@/app/icons/map-pin.svg';
+import { useEffect, useState } from 'react';
 
 const FabList = () => {
-  const mapUrl = getMapUrl();
+  const [mapUrl, setMapUrl] = useState('');
+
+  useEffect(() => {
+    const _mapUrl = getMapUrl();
+    setMapUrl(_mapUrl);
+  }, []);
+
   return (
     <aside className={styles.fabWrapper}>
       <a href={scheduleLink} rel="noreferrer" target="_blank">

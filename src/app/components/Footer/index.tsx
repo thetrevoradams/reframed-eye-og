@@ -4,20 +4,26 @@ import {
   phoneNumberDisplayed,
   phoneNumberLink,
   scheduleLink,
-} from '@/utils/constants';
+} from '@/app/utils/constants';
 import { Button } from '../Button';
 import { Text } from '../Text';
 import style from './footer.module.css';
 import Phone from '@/app/icons/phone.svg';
 import MapPin from '@/app/icons/map-pin.svg';
-import { getMapUrl } from '@/utils/getMapUrl';
+import { getMapUrl } from '@/app/utils/getMapUrl';
 import Image from 'next/image';
 import Youtube from '@/app/icons/youtube.svg';
 import Instagram from '@/app/icons/instagram.svg';
 import Facebook from '@/app/icons/facebook.svg';
+import { useEffect, useState } from 'react';
 
 const Footer = () => {
-  const mapUrl = getMapUrl();
+  const [mapUrl, setMapUrl] = useState('');
+
+  useEffect(() => {
+    const _mapUrl = getMapUrl();
+    setMapUrl(_mapUrl);
+  }, []);
 
   return (
     <footer className={style.footer}>
@@ -49,7 +55,7 @@ const Footer = () => {
           <div className={style.iconWrapper}>
             <MapPin />
             <a href={mapUrl} rel="noreferrer" target="_blank">
-              3508 S 25 E
+              3508 S 25th E
               <br />
               Idaho Falls, ID 84331
             </a>
