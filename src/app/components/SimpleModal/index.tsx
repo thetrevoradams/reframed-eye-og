@@ -59,7 +59,7 @@ const SimpleModal = ({
         <div className={style.buttonGroup}>
           {showPermanentDismiss && (
             <Button variant="outlined" onClick={permanentlyDismissModal}>
-              Don't show again
+              Don&apos;t show again
             </Button>
           )}
           <Button onClick={closeModal}>{actionText}</Button>

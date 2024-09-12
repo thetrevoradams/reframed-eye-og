@@ -3,7 +3,10 @@ import SectionText from '../SectionText';
 import ServiceCard from '../ServiceCard';
 import style from './services.module.css';
 
-const OurServices = forwardRef((_, ref?: ForwardedRef<HTMLElement>) => {
+const OurServices = forwardRef(function OurServices(
+  _,
+  ref?: ForwardedRef<HTMLElement>
+) {
   return (
     <section className="sectionSpacing centerColumnContent" ref={ref}>
       <SectionText
