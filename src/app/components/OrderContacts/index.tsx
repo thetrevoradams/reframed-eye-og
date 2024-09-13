@@ -4,6 +4,7 @@ import SectionGradientContainer from '../SectionGradientContainer';
 import SectionText from '../SectionText';
 import SimpleModal from '../SimpleModal';
 import style from './contacts.module.css';
+import { Text } from '../Text';
 
 const OrderContacts = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -38,7 +39,12 @@ const OrderContacts = () => {
         isOpen={isModalOpen}
         closeModal={() => setIsModalOpen(false)}
         title="Contact ordering coming soon!"
-        content="Our online ordering system will be online shortly. Please check back later or stop by or give us a call to place order."
+        content={
+          <Text el="p">
+            Our online ordering system will be online shortly. Please check back
+            later or stop by or give us a call to place order.
+          </Text>
+        }
         actionText="Ok"
       />
     </SectionGradientContainer>

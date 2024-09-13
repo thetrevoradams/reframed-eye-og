@@ -6,7 +6,7 @@ import { TextElement } from '../Text/types';
 
 interface SectionTextProps {
   heading: string;
-  content?: string | ReactNode;
+  content?: ReactNode;
   headingEl?: TextElement;
   contentEl?: TextElement;
   className?: string;

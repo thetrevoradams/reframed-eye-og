@@ -36,15 +36,7 @@ const SimpleModal = ({
     <div className={style.scrim}>
       <div role="dialog" className={`${style.modal} maxTextContent`}>
         <Text el="h3">{title}</Text>
-        {content && (
-          <>
-            {typeof content === 'string' ? (
-              <Text el="p">{content}</Text>
-            ) : (
-              { content }
-            )}
-          </>
-        )}
+        {content}
         {showJobOfferContent && (
           <Text el="p">
             If interested, please send your resume to{' '}

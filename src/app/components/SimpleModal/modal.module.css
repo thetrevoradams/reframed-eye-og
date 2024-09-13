@@ -37,6 +37,8 @@
   opacity: 0;
   transform: translateY(50px);
   animation: fadeInSlideUp 0.3s ease-in-out forwards;
+  max-height: 80dvh;
+  overflow-y: scroll;
 }
 
 .buttonGroup {
