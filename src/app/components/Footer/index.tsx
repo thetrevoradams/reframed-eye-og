@@ -38,7 +38,11 @@ const Footer = () => {
             today and take the first step towards clearer vision and healthier
             eyes.
           </Text>
-          <a href={scheduleLink} className={style.button}>
+          <a
+            href={scheduleLink}
+            aria-label="Schedule an exam"
+            className={style.button}
+          >
             <Button variant="outlined">Book Appointment</Button>
           </a>
         </section>
@@ -48,19 +52,33 @@ const Footer = () => {
           </Text>
           <div className={style.iconWrapper}>
             <Phone />
-            <a href={`tel:${phoneNumberLink}`} rel="noreferrer">
+            <a
+              href={`tel:${phoneNumberLink}`}
+              aria-label="Office phone number"
+              rel="noreferrer"
+            >
               {phoneNumberDisplayed}
             </a>
           </div>
           <div className={style.iconWrapper}>
             <MapPin />
-            <a href={mapUrl} rel="noreferrer" target="_blank">
+            <a
+              href={mapUrl}
+              aria-label="Reframed Eye office location link"
+              rel="noreferrer"
+              target="_blank"
+            >
               3508 S 25th E
               <br />
               Idaho Falls, ID 84331
             </a>
           </div>
-          <a href={mapUrl} rel="noreferrer" target="_blank">
+          <a
+            href={mapUrl}
+            aria-label="Reframed Eye office location map"
+            rel="noreferrer"
+            target="_blank"
+          >
             <Image
               src={'/images/map.png'}
               alt="Reframed Eye office location map"
@@ -70,13 +88,22 @@ const Footer = () => {
             />
           </a>
           <div className={style.row}>
-            <a href="https://www.facebook.com/profile.php?id=61561251600120">
+            <a
+              aria-label="ReframedEye Facebook page"
+              href="https://www.facebook.com/profile.php?id=61561251600120"
+            >
               <Facebook />
             </a>
-            <a href="https://www.instagram.com/reframedeye/">
+            <a
+              aria-label="ReframedEye Instagram page"
+              href="https://www.instagram.com/reframedeye/"
+            >
               <Instagram />
             </a>
-            <a href="https://www.youtube.com/channel/UC5qm6k0SoiEnhNG4I8xeWrQ">
+            <a
+              aria-label="ReframedEye Youtube page"
+              href="https://www.youtube.com/channel/UC5qm6k0SoiEnhNG4I8xeWrQ"
+            >
               <Youtube />
             </a>
           </div>

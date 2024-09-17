@@ -18,13 +18,27 @@ const FabList = () => {
 
   return (
     <aside className={styles.fabWrapper}>
-      <a href={scheduleLink} rel="noreferrer" target="_blank">
+      <a
+        href={scheduleLink}
+        aria-label="Schedule an exam"
+        rel="noreferrer"
+        target="_blank"
+      >
         <Calendar />
       </a>
-      <a href={`tel:${phoneNumberLink}`} rel="noreferrer">
+      <a
+        href={`tel:${phoneNumberLink}`}
+        aria-label="Office phone number"
+        rel="noreferrer"
+      >
         <Phone />
       </a>
-      <a href={mapUrl} rel="noreferrer" target="_blank">
+      <a
+        href={mapUrl}
+        aria-label="Office location map link"
+        rel="noreferrer"
+        target="_blank"
+      >
         <MapPin />
       </a>
     </aside>
