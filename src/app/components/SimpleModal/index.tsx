@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useRef } from 'react';
 import style from './modal.module.css';
 import { Button } from '../Button';
 import { Text } from '../Text';
@@ -23,6 +23,41 @@ const SimpleModal = ({
   showPermanentDismiss,
   showJobOfferContent,
 }: SimpleModalProps) => {
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        modalRef.current.classList.add(`${style.fadeOut}`);
+        setTimeout(() => {
+          closeModal();
+        }, 300);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        modalRef?.current?.classList.add(`${style.fadeOut}`);
+        setTimeout(() => {
+          closeModal();
+        }, 300);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleKeyDown);
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [closeModal, isOpen]);
+
   if (!isOpen) {
     return null;
   }
@@ -34,7 +69,11 @@ const SimpleModal = ({
 
   return (
     <div className={style.scrim}>
-      <div role="dialog" className={`${style.modal} maxTextContent`}>
+      <div
+        role="dialog"
+        className={`${style.modal} maxTextContent`}
+        ref={modalRef}
+      >
         <Text el="h3">{title}</Text>
         {content}
         {showJobOfferContent && (

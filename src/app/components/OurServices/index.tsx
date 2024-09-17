@@ -19,24 +19,24 @@ const OurServices = forwardRef(function OurServices(
       <div className={style.servicesWrapper}>
         <div className={style.servicesColumn}>
           <ServiceCard
-            imageSrc="/images/service_eyeExam.jpg"
+            imageSrc="/images/service_eyeExam.png"
             heading="Eye Exams"
             content="Thorough exams to evaluate your eye health and provide a customized prescription for your lifestyle."
           />
           <ServiceCard
-            imageSrc="/images/service_contacts.jpg"
+            imageSrc="/images/service_contacts.png"
             heading="Contact Lens Fitting"
             content="Personalized prescriptions to maximize vision, comfort, and eye health."
           />
         </div>
         <div className={style.servicesColumn}>
           <ServiceCard
-            imageSrc="/images/service_pediatric.jpg"
+            imageSrc="/images/service_pediatric.png"
             heading="Pediatric Eye Care"
             content="Our kid-friendly office welcomes patients of all ages."
           />
           <ServiceCard
-            imageSrc="/images/service_lowVision.jpg"
+            imageSrc="/images/service_lowVision.png"
             heading="Low Vision"
             content="Helping individuals with poor vision use visual aids to enhance their quality of life."
           />

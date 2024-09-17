@@ -1,4 +1,4 @@
-import { KeyboardEvent, useState } from 'react';
+import { useState } from 'react';
 import { Button } from '../Button';
 import SectionGradientContainer from '../SectionGradientContainer';
 import SectionText from '../SectionText';
@@ -13,12 +13,6 @@ const Testimonials = () => {
 
   const openModal = () => {
     setIsModalOpen(true);
-  };
-
-  const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
-    if (event.key === 'Escape') {
-      setIsModalOpen(false);
-    }
   };
 
   return (
@@ -42,12 +36,7 @@ const Testimonials = () => {
           author="Barbara Wilkerson"
         />
       </div>
-      <Button
-        aria-haspopup
-        onClick={openModal}
-        onKeyDown={handleKeyDown}
-        className={style.bioTriggerBtn}
-      >
+      <Button aria-haspopup onClick={openModal} className={style.bioTriggerBtn}>
         Read Dr. Olsen&apos;s Bio
       </Button>
       <SimpleModal
@@ -56,10 +45,12 @@ const Testimonials = () => {
         title="Meet Dr. Olsen"
         content={
           <>
+            {/* NOTE: Image must be cropped to be a square image or this component be updated to allow a more flexible sizing  */}
             <Image
-              src="/images/jaren.jpg"
+              src="/images/jaren.png"
               height={200}
               width={200}
+              objectFit="cover"
               alt="Dr. Jaren Olsen"
               className={style.avatar}
             />

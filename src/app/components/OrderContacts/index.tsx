@@ -1,4 +1,4 @@
-import { KeyboardEvent, useState } from 'react';
+import { useState } from 'react';
 import { Button } from '../Button';
 import SectionGradientContainer from '../SectionGradientContainer';
 import SectionText from '../SectionText';
@@ -13,12 +13,6 @@ const OrderContacts = () => {
     setIsModalOpen(true);
   };
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
-    if (event.key === 'Escape') {
-      setIsModalOpen(false);
-    }
-  };
-
   return (
     <SectionGradientContainer>
       <SectionText
@@ -27,12 +21,7 @@ const OrderContacts = () => {
         contentClassName={style.subtitle}
         noHorizontalPadding
       />
-      <Button
-        aria-haspopup
-        className={style.ctaButton}
-        onClick={openModal}
-        onKeyDown={handleKeyDown}
-      >
+      <Button aria-haspopup className={style.ctaButton} onClick={openModal}>
         Order Contacts
       </Button>
       <SimpleModal
