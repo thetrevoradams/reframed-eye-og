@@ -20,7 +20,7 @@ export default function Home() {
       <Head>
         <link
           rel="preload"
-          href="/images/headerBackground.png"
+          href="/images/headerBackground.webp"
           as="image"
           fetchPriority="high"
         />
