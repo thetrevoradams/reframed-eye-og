@@ -47,7 +47,7 @@ const Testimonials = () => {
           <>
             {/* NOTE: Image must be cropped to be a square image or this component be updated to allow a more flexible sizing  */}
             <Image
-              src="/images/jaren.png"
+              src="/images/jaren.webp"
               height={200}
               width={200}
               objectFit="cover"
@@ -93,7 +93,7 @@ const Testimonials = () => {
             </div>
           </>
         }
-        actionText="Ok"
+        actionText="Close"
       />
     </SectionGradientContainer>
   );
