@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Reframed Eye Optometry',
     description:
       'Comprehensive eye care services at Reframed Eye, a new optometry practice coming soon to Idaho Falls, Idaho. Glasses, contacts, eye exams, low vision evaluations and more! Schedule online or call 208-557-3222.',
-    images: '/logo.png',
+    images: 'https://reframedeye.com/logo.png',
   },
 };
 
