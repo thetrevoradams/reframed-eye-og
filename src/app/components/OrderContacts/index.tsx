@@ -1,18 +1,10 @@
-import { useState } from 'react';
+import { orderContactsLink } from '@/app/utils/constants';
 import { Button } from '../Button';
 import SectionGradientContainer from '../SectionGradientContainer';
 import SectionText from '../SectionText';
-import SimpleModal from '../SimpleModal';
 import style from './contacts.module.css';
-import { Text } from '../Text';
 
 const OrderContacts = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
   return (
     <SectionGradientContainer>
       <SectionText
@@ -21,21 +13,11 @@ const OrderContacts = () => {
         contentClassName={style.subtitle}
         noHorizontalPadding
       />
-      <Button aria-haspopup className={style.ctaButton} onClick={openModal}>
-        Order Contacts
-      </Button>
-      <SimpleModal
-        isOpen={isModalOpen}
-        closeModal={() => setIsModalOpen(false)}
-        title="Contact ordering coming soon!"
-        content={
-          <Text el="p">
-            Our online ordering system will be online shortly. Please check back
-            later or stop by or give us a call to place order.
-          </Text>
-        }
-        actionText="Ok"
-      />
+      <a href={orderContactsLink} target="_blank" rel="noopener noreferrer">
+        <Button aria-haspopup className={style.ctaButton}>
+          Order Contacts
+        </Button>
+      </a>
     </SectionGradientContainer>
   );
 };

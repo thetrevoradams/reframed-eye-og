@@ -1,7 +1,6 @@
 'use client';
 import React, { ReactNode } from 'react';
 import {
-  FontSize,
   FontSizes,
   FontWeight,
   HeaderElements,

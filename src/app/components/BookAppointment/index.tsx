@@ -19,7 +19,7 @@ const BookAppointment = () => {
           </>
         }
       />
-      <a href={scheduleLink}>
+      <a href={scheduleLink} target="_blank" rel="noopener noreferrer">
         <Button>Book Appointment</Button>
       </a>
     </section>
