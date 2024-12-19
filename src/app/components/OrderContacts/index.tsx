@@ -14,9 +14,7 @@ const OrderContacts = () => {
         noHorizontalPadding
       />
       <a href={orderContactsLink} target="_blank" rel="noopener noreferrer">
-        <Button aria-haspopup className={style.ctaButton}>
-          Order Contacts
-        </Button>
+        <Button className={style.ctaButton}>Order Contacts</Button>
       </a>
     </SectionGradientContainer>
   );

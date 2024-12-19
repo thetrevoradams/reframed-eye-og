@@ -2,6 +2,8 @@ import { ForwardedRef, forwardRef } from 'react';
 import SectionText from '../SectionText';
 import ServiceCard from '../ServiceCard';
 import style from './services.module.css';
+import { Button } from '../Button';
+import { noInsuranceLink } from '@/app/utils/constants';
 
 const OurServices = forwardRef(function OurServices(
   _,
@@ -42,6 +44,16 @@ const OurServices = forwardRef(function OurServices(
           />
         </div>
       </div>
+      <a
+        href={noInsuranceLink}
+        className={style.paymentInfoTriggerBtn}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button variant="outlined" className={style.ctaButton}>
+          No insurance? No problem!
+        </Button>
+      </a>
     </section>
   );
 });
