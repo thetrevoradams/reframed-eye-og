@@ -16,6 +16,9 @@ import Youtube from '@/app/icons/youtube.svg';
 import Instagram from '@/app/icons/instagram.svg';
 import Facebook from '@/app/icons/facebook.svg';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import Divider from '../Divider';
+import SectionGradientContainer from '../SectionGradientContainer';
 
 const Footer = () => {
   const [mapUrl, setMapUrl] = useState('');
@@ -26,90 +29,103 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className={style.footer}>
-      <div className={style.wrapper}>
-        <section className={style.sectionContent}>
-          <Text el="h3" styleAs="h2">
-            Schedule Appointment
-          </Text>
-          <Text el="p">
-            Trust our team to provide exceptional care and personalized
-            attention for all your eye care needs. Schedule your appointment
-            today and take the first step towards clearer vision and healthier
-            eyes.
-          </Text>
-          <a
-            href={scheduleLink}
-            aria-label="Schedule an exam"
-            className={style.button}
-          >
-            <Button variant="outlined">Book Appointment</Button>
-          </a>
-        </section>
-        <section className={style.sectionContent}>
-          <Text el="h3" styleAs="h2">
-            Contact Us
-          </Text>
-          <div className={style.iconWrapper}>
-            <Phone />
+    <>
+      <footer className={style.footer}>
+        <div className={style.wrapper}>
+          <section className={style.sectionContent}>
+            <Text el="h3" styleAs="h2">
+              Schedule Appointment
+            </Text>
+            <Text el="p">
+              Trust our team to provide exceptional care and personalized
+              attention for all your eye care needs. Schedule your appointment
+              today and take the first step towards clearer vision and healthier
+              eyes.
+            </Text>
             <a
-              href={`tel:${phoneNumberLink}`}
-              aria-label="Office phone number"
-              rel="noreferrer"
+              href={scheduleLink}
+              aria-label="Schedule an exam"
+              className={style.button}
             >
-              {phoneNumberDisplayed}
+              <Button variant="outlined">Book Appointment</Button>
             </a>
-          </div>
-          <div className={style.iconWrapper}>
-            <MapPin />
+          </section>
+          <section className={style.sectionContent}>
+            <Text el="h3" styleAs="h2">
+              Contact Us
+            </Text>
+            <div className={style.iconWrapper}>
+              <Phone />
+              <a
+                href={`tel:${phoneNumberLink}`}
+                aria-label="Office phone number"
+                rel="noreferrer"
+              >
+                {phoneNumberDisplayed}
+              </a>
+            </div>
+            <div className={style.iconWrapper}>
+              <MapPin />
+              <a
+                href={mapUrl}
+                aria-label="Reframed Eye office location link"
+                rel="noreferrer"
+                target="_blank"
+              >
+                3508 S 25th E
+                <br />
+                Idaho Falls, ID 84331
+              </a>
+            </div>
             <a
               href={mapUrl}
-              aria-label="Reframed Eye office location link"
+              aria-label="Reframed Eye office location map"
               rel="noreferrer"
               target="_blank"
             >
-              3508 S 25th E
-              <br />
-              Idaho Falls, ID 84331
+              <Image
+                src={'/images/map.png'}
+                alt="Reframed Eye office location map"
+                width={348}
+                height={190}
+                className={style.image}
+              />
             </a>
-          </div>
-          <a
-            href={mapUrl}
-            aria-label="Reframed Eye office location map"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <Image
-              src={'/images/map.png'}
-              alt="Reframed Eye office location map"
-              width={348}
-              height={190}
-              className={style.image}
-            />
-          </a>
-          <div className={style.row}>
-            <a
-              aria-label="ReframedEye Facebook page"
-              href="https://www.facebook.com/profile.php?id=61561251600120"
-            >
-              <Facebook />
-            </a>
-            <a
-              aria-label="ReframedEye Instagram page"
-              href="https://www.instagram.com/reframedeye/"
-            >
-              <Instagram />
-            </a>
-            <a
-              aria-label="ReframedEye Youtube page"
-              href="https://www.youtube.com/channel/UC5qm6k0SoiEnhNG4I8xeWrQ"
-            >
-              <Youtube />
-            </a>
-          </div>
-        </section>
-      </div>
-    </footer>
+            <div className={style.row}>
+              <a
+                aria-label="ReframedEye Facebook page"
+                href="https://www.facebook.com/profile.php?id=61561251600120"
+              >
+                <Facebook />
+              </a>
+              <a
+                aria-label="ReframedEye Instagram page"
+                href="https://www.instagram.com/reframedeye/"
+              >
+                <Instagram />
+              </a>
+              <a
+                aria-label="ReframedEye Youtube page"
+                href="https://www.youtube.com/channel/UC5qm6k0SoiEnhNG4I8xeWrQ"
+              >
+                <Youtube />
+              </a>
+            </div>
+          </section>
+        </div>
+      </footer>
+      <SectionGradientContainer hideCurve className={style.footerLinks}>
+        <Text el="h4" styleAs="h5" className={style.footerLinksTitle}>
+          Help
+        </Text>
+        <Link href={'/terms'} className={style.footerLink}>
+          Terms
+        </Link>
+        <Link href={'/privacy'} className={style.footerLink}>
+          Privacy Policy
+        </Link>
+      </SectionGradientContainer>
+    </>
   );
 };
 

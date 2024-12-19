@@ -2,10 +2,19 @@ import TopCurve from '@/app/icons/top_curve.svg';
 import style from './gradientContainer.module.css';
 import { PropsWithChildren } from 'react';
 
-const SectionGradientContainer = ({ children }: PropsWithChildren) => {
+interface SectionGradientContainerProps {
+  className?: string;
+  hideCurve?: boolean;
+}
+
+const SectionGradientContainer = ({
+  hideCurve = false,
+  className = '',
+  children,
+}: PropsWithChildren<SectionGradientContainerProps>) => {
   return (
-    <div className={style.wrapper}>
-      <TopCurve className={style.curveSvg} />
+    <div className={`${style.wrapper} ${className}`}>
+      {!hideCurve && <TopCurve className={style.curveSvg} />}
       <section className={`centerColumnContent ${style.gradientContainer}`}>
         {children}
       </section>

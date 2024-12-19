@@ -2,8 +2,9 @@
   background-color: #f3f3f3;
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 4rem 2rem 8rem 2rem;
-  justify-content: center;
 }
 .wrapper {
   max-width: 830px;
@@ -41,6 +42,32 @@
   margin-top: 10px;
   display: flex;
   gap: 20px;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.footerLinks section {
+  padding-bottom: 50px;
+}
+.footerLinksTitle {
+  margin-bottom: 1rem;
+}
+
+.footerLink {
+  margin-bottom: 1rem;
+  font-family: var(--font-manrope);
+  font-size: 14px;
+  opacity: 0.7;
+  transition: opacity 0.5s;
+}
+
+.footerLink:hover {
+  opacity: 1;
 }
 
 @media screen and (max-width: 768px) {
