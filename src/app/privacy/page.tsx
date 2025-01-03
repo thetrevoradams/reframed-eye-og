@@ -1,120 +1,81 @@
+'use client';
+
+import { useSearchParams } from 'next/navigation';
 import styles from './privacy.module.css';
 import { Text } from '@/app/components/Text';
 
-const Privacy = () => {
+const PrivacyPolicy = () => {
+  const searchParams = useSearchParams();
+
+  const isLowVision = searchParams.get('lv');
   return (
-    <main className={styles.main}>
+    <main
+      className={`${styles.main} ${isLowVision ? styles.lowVisionContent : ''}`}
+    >
       <section className="centerColumnContent maxTextContent">
         <Text el="h1" styleAs="h2">
-          Privacy Policy for Reframed Eye Optometry
+          Reframed Eye Privacy Policy
         </Text>
-
         <Text el="p" className={styles.subtitle}>
-          At Reframed Eye Optometry, your privacy is important to us. This
-          Privacy Policy outlines how we collect, use, and protect your personal
-          information when you visit our office, use our website, or communicate
-          with us.
+          <em>Effective Date:</em> December 1, 2024
         </Text>
-
-        <Text el="p" className={styles.subtitle}>
-          <em>Effective Date:</em> December 18, 2024
+        <Text el="p" className={styles.p}>
+          I consent to recommended examinations, treatments, and/or diagnostic
+          procedures. I understand that there may be associated alternatives,
+          benefits and risks, which can be further explained at any time at my
+          request. I can stop treatment or express concerns or complaints at any
+          time.
         </Text>
-
-        <ol>
-          <li className={styles.listItem}>Information We Collect</li>
-          <Text el="p" className={styles.p}>
-            We may collect the following types of personal information:
-            <ul className={styles.nestedList}>
-              <li>
-                <em>Personal Details:</em> Name, address, phone number, email
-                address, and date of birth.
-              </li>
-              <li>
-                <em>Health Information:</em> Medical history, eye exam results,
-                prescriptions, and treatment information.
-              </li>
-              <li>
-                <em>Payment Information:</em> Billing details, payment methods,
-                and insurance information.
-              </li>
-            </ul>
-          </Text>
-          <li className={styles.listItem}>How We Use Your Information</li>
-          <Text el="p" className={styles.p}>
-            We use your information to:
-            <ul className={styles.nestedList}>
-              <li>
-                Provide you with eye care services, exams, and treatments.
-              </li>
-              <li>Schedule and manage appointments.</li>
-              <li>Process payments and handle insurance claims.</li>
-              <li>Send reminders, updates, or important notices.</li>
-              <li>Comply with legal and regulatory requirements.</li>
-            </ul>
-          </Text>
-          <li className={styles.listItem}>How We Protect Your Information</li>
-          <Text el="p" className={styles.p}>
-            We take security seriously and implement safeguards to protect your
-            personal information, including:
-            <ul className={styles.nestedList}>
-              <li>
-                Provide you with eye care services, exams, and treatments.
-              </li>
-              <li>Secure storage and restricted access to patient records.</li>
-              <li>Encryption of sensitive data.</li>
-              <li>Staff training on privacy and confidentiality practices.</li>
-            </ul>
-          </Text>
-          <li className={styles.listItem}>Sharing Your Information</li>
-          <Text el="p" className={styles.p}>
-            We do <b>not sell</b> your information. We may share your data only
-            as necessary to:
-            <ul className={styles.nestedList}>
-              <li>Process insurance claims with your provider.</li>
-              <li>
-                Comply with legal obligations or respond to regulatory
-                authorities.
-              </li>
-              <li>
-                Coordinate care with other healthcare providers at your request.
-              </li>
-            </ul>
-          </Text>
-          <li className={styles.listItem}>Your Rights</li>
-          <Text el="p" className={styles.p}>
-            You have the right to:
-            <ul className={styles.nestedList}>
-              <li>Access and obtain a copy of your health records.</li>
-              <li>Request corrections to your information.</li>
-              <li>
-                Request that we limit or restrict certain uses of your
-                information.
-              </li>
-            </ul>
-          </Text>
-          <li className={styles.listItem}>Changes to This Policy</li>
-          <Text el="p" className={styles.p}>
-            We may update this Privacy Policy from time to time. Any changes
-            will be posted in our office and on our website.
-          </Text>
-          <li className={styles.listItem}>Contact Us</li>
-          <Text el="p" className={styles.p}>
-            If you have any questions or concerns about this Privacy Policy or
-            your personal information, please contact us at:
-            <div className={styles.nestedList}>
-              <b>Phone:</b> (208) 557-3222
-              <br />
-              <b>Address:</b> 3508 S 25th E, Idaho Falls, ID 84331
-            </div>
-          </Text>
-        </ol>
-        <Text el="p" className={styles.footer}>
-          This Privacy Policy complies with applicable privacy laws, including
-          the Health Insurance Portability and Accountability Act (HIPAA).
+        <Text el="p" className={styles.p}>
+          If the patient is a minor, I likewise consent to treatment and all
+          policies of this agreement on the minor’s behalf. I understand that if
+          I share legal custody, I am representing that all parties who have
+          legal rights of the minor have been made aware of, and consent to
+          treatment for the minor.
+        </Text>
+        <Text el="p" className={styles.p}>
+          I am responsible for any charges not covered by insurance. Co-payments
+          are due at the time of service.
+        </Text>
+        <Text el="p" className={styles.p}>
+          Some services, like refraction testing may be required as part of the
+          examination. Medicare and many supplemental insurances do not cover
+          this test. I am responsible for all non-covered services, including
+          refraction testing.
+        </Text>
+        <Text el="p" className={styles.p}>
+          I consent to receiving communications at any provided phone number,
+          understanding that these calls may be initiated by us, our affiliates,
+          agents, contractors, or assignees. Methods of contact may include
+          prerecorded/artificial voice messages, automated dialing devices, and
+          text messages. Additionally, I consent to receiving emails under the
+          same terms at any provided email address.
+        </Text>
+        <Text el="p" className={styles.p}>
+          All information concerning my medical treatment may be released to
+          insurance carriers, pharmacies, and referring providers.
+        </Text>
+        <Text el="p" className={styles.p}>
+          I have a right to access my personal medical record concerning
+          diagnosis, treatment options, and expected outcomes. I can also
+          request that this information be provided to a person who is acting on
+          my behalf.
+        </Text>
+        <Text el="p" className={styles.p}>
+          I have the right to amend my health care information if I feel that it
+          is inaccurate or incomplete. My request must be in writing and must
+          include an explanation of why the information should be amended.
+        </Text>
+        <Text el="p" className={styles.p}>
+          My protected health information may be used to provide treatment,
+          obtain payment for treatment, and conduct health care operations. My
+          protected health information may be used or disclosed only for these
+          purposes unless authorization for the use is obtained or disclosure is
+          otherwise permitted by the HIPAA privacy regulations or state law.
         </Text>
       </section>
     </main>
   );
 };
 
-export default Privacy;
+export default PrivacyPolicy;

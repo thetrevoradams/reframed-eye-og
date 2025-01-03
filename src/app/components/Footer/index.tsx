@@ -12,6 +12,7 @@ import Phone from '@/app/icons/phone.svg';
 import MapPin from '@/app/icons/map-pin.svg';
 import { getMapUrl } from '@/app/utils/getMapUrl';
 import Image from 'next/image';
+import Clock from '@/app/icons/clock.svg';
 import Youtube from '@/app/icons/youtube.svg';
 import Instagram from '@/app/icons/instagram.svg';
 import Facebook from '@/app/icons/facebook.svg';
@@ -77,6 +78,14 @@ const Footer = () => {
                 Idaho Falls, ID 84331
               </a>
             </div>
+            <div className={style.iconWrapper}>
+              <Clock aria-label="Reframed Eye office hours" />
+              <Text el="p">
+                Mon-Thurs: 8am - 5pm
+                <br />
+                Fri: 8am - 4:30pm
+              </Text>
+            </div>
             <a
               href={mapUrl}
               aria-label="Reframed Eye office location map"
@@ -118,12 +127,15 @@ const Footer = () => {
         <Text el="h4" styleAs="h5" className={style.footerLinksTitle}>
           Help
         </Text>
-        <Link href={'/terms'} className={style.footerLink}>
-          Terms
-        </Link>
         <Link href={'/privacy'} className={style.footerLink}>
           Privacy Policy
         </Link>
+        <a
+          href="https://patient-intake.prod.barti.com/86237e89-546a-48f3-ad64-d931811b44af/forms/b519a870-b42d-483c-b15d-40e320959906"
+          className={style.footerLink}
+        >
+          Patient Intake Form
+        </a>
       </SectionGradientContainer>
     </>
   );
