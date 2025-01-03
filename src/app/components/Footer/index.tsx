@@ -126,7 +126,7 @@ const Footer = () => {
         <Text el="h4" styleAs="h5" className={style.footerLinksTitle}>
           Help
         </Text>
-        <Link href={'/privacy'} className={style.footerLink}>
+        <Link href={'/privacypolicy'} className={style.footerLink}>
           Privacy Policy
         </Link>
         <a
