@@ -18,7 +18,6 @@ import Instagram from '@/app/icons/instagram.svg';
 import Facebook from '@/app/icons/facebook.svg';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import Divider from '../Divider';
 import SectionGradientContainer from '../SectionGradientContainer';
 
 const Footer = () => {

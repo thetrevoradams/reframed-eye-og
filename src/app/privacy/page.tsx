@@ -1,13 +1,21 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import styles from './privacy.module.css';
 import { Text } from '@/app/components/Text';
 
 const PrivacyPolicy = () => {
-  const searchParams = useSearchParams();
+  const [isLowVision, setIsLowVision] = useState(false);
+  const hasWindow = typeof window !== 'undefined';
+  useEffect(() => {
+    if (!hasWindow) return;
 
-  const isLowVision = searchParams.get('lv');
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams) {
+      setIsLowVision(!!urlParams.get('lv'));
+    }
+  }, [hasWindow]);
+
   return (
     <main
       className={`${styles.main} ${isLowVision ? styles.lowVisionContent : ''}`}
