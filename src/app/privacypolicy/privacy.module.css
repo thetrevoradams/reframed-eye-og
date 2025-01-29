@@ -5,6 +5,7 @@
   align-items: center;
   min-height: 100vh;
   margin: 2rem;
+  position: relative;
 }
 
 .lowVisionContent p,
@@ -18,4 +19,23 @@
 
 .p {
   margin-top: 1rem;
+}
+
+.backLink {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+button.backLinkButton {
+  padding: 10px 12px;
+  height: 36px;
+  width: 36px;
+  border-radius: 36px;
+}
+@media screen and (max-width: 575px) {
+  .backLink {
+    position: inherit;
+    align-self: flex-start;
+    margin-bottom: 10px;
+  }
 }

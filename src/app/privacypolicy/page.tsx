@@ -3,6 +3,9 @@
 import { useEffect, useState } from 'react';
 import styles from './privacy.module.css';
 import { Text } from '@/app/components/Text';
+import { Button } from '../components/Button';
+import ChevronLeft from '@/app/icons/chevron-left.svg';
+import Link from 'next/link';
 
 const PrivacyPolicy = () => {
   const [isLowVision, setIsLowVision] = useState(false);
@@ -21,6 +24,15 @@ const PrivacyPolicy = () => {
       className={`${styles.main} ${isLowVision ? styles.lowVisionContent : ''}`}
     >
       <section className="centerColumnContent maxTextContent">
+        <Link href={'/'} className={styles.backLink}>
+          <Button
+            showArrow={false}
+            variant="outlined"
+            className={styles.backLinkButton}
+          >
+            <ChevronLeft />
+          </Button>
+        </Link>
         <Text el="h1" styleAs="h2">
           Reframed Eye Privacy Policy
         </Text>

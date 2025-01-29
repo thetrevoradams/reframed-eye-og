@@ -124,7 +124,7 @@ const Footer = () => {
       </footer>
       <SectionGradientContainer hideCurve className={style.footerLinks}>
         <Text el="h4" styleAs="h5" className={style.footerLinksTitle}>
-          Help
+          Policies & Forms
         </Text>
         <Link href={'/privacypolicy'} className={style.footerLink}>
           Privacy Policy
@@ -134,6 +134,13 @@ const Footer = () => {
           className={style.footerLink}
         >
           Patient Intake Form
+        </a>
+        <a
+          href="assets/Record_Request_Form.pdf"
+          download
+          className={style.footerLink}
+        >
+          Record Request Form
         </a>
       </SectionGradientContainer>
     </>
