@@ -50,7 +50,7 @@ const Testimonials = () => {
               src="/images/jaren.webp"
               height={200}
               width={200}
-              objectFit="cover"
+              style={{ objectFit: 'cover' }}
               alt="Dr. Jaren Olsen"
               className={style.avatar}
             />

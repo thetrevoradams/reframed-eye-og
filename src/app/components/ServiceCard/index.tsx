@@ -16,8 +16,7 @@ const ServiceCard = ({ imageSrc, heading, content }: ServiceCardProps) => {
           src={imageSrc}
           width={300}
           height={200}
-          objectFit="cover"
-          objectPosition="center"
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
           alt={heading}
           className={style.image}
         />
