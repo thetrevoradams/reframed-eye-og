@@ -29,7 +29,7 @@ export default function RootLayout({
       <body className={`${marcellus.variable} ${manrope.variable}`}>
         <GoogleTagManager gtmId={GTM_ID} />
         <Script id="gtm" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date()); gtag('config', ${GTM_ID});
+          {`window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date()); gtag('config', '${GTM_ID}');
           `}
         </Script>
         <Script id="localBusinessData" type="application/ld+json">
