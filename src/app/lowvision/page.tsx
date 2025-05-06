@@ -1,12 +1,10 @@
+'use client';
+
 import Link from 'next/link';
 import { Button } from '../components/Button';
 import SectionText from '../components/SectionText';
 import styles from '../page.module.css';
-import {
-  phoneNumberDisplayed,
-  phoneNumberLink,
-  scheduleLink,
-} from '../utils/constants';
+import { phoneNumberDisplayed, phoneNumberLink } from '../utils/constants';
 import localStyles from './lowVision.module.css';
 
 export default function LowVision() {
