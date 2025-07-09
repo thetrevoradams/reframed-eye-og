@@ -62,7 +62,7 @@ export const Text = ({
       {...(isHeader ? { role: 'heading' } : {})}
       size={size}
       weight={weight}
-      isHeader={isHeader}
+      header={`${isHeader}`}
       center={center}
       className={className}
     >

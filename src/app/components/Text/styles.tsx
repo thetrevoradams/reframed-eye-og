@@ -7,7 +7,7 @@ export const StyledText = styled.p<{
   size?: FontSize;
   weight?: FontWeight;
   center?: boolean;
-  isHeader: boolean;
+  header: string;
 }>`
   font-size: ${props => ` ${props.size}rem`};
 
@@ -15,5 +15,5 @@ export const StyledText = styled.p<{
   ${props => (props.center ? `text-align: center` : '')};
 
   font-family: ${props =>
-    props.isHeader ? 'var(--font-marcellus)' : 'var(--font-manrope)'};
+    props.header === 'true' ? 'var(--font-marcellus)' : 'var(--font-manrope)'};
 `;

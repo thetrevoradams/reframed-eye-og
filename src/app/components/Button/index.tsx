@@ -30,7 +30,35 @@ export const Button = ({
       className={`${styles.button} ${
         variant === 'outlined' && styles.outlined
       } ${className ?? ''}`}
-      onClick={handleClick}
+      {...(typeof window !== undefined ? { onClick: handleClick } : {})}
+      {...props}
+    >
+      {children}
+      {showArrow && <RightChevron />}
+    </button>
+  );
+};
+
+interface SSGButtonProps
+  extends ButtonHTMLAttributes<Omit<HTMLButtonElement, 'onClick'>> {
+  variant?: 'filled' | 'outlined';
+  className?: string;
+  showArrow?: boolean;
+  children: ReactNode;
+}
+
+export const SSGButton = ({
+  variant = 'filled',
+  className,
+  showArrow = true,
+  children,
+  ...props
+}: SSGButtonProps) => {
+  return (
+    <button
+      className={`${styles.button} ${
+        variant === 'outlined' && styles.outlined
+      } ${className ?? ''}`}
       {...props}
     >
       {children}

@@ -45,7 +45,8 @@ h6 {
 }
 
 p,
-span {
+span,
+figcaption {
   font-family: var(--font-manrope);
   letter-spacing: 0.1px;
 }

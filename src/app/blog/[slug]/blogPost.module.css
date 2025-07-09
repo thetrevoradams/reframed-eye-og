@@ -1,0 +1,74 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  margin: 2rem;
+  position: relative;
+}
+
+.subtitle {
+  margin: 1rem 0;
+  opacity: 0.6;
+  font-size: 0.75rem;
+}
+.figure {
+  width: 80%;
+}
+.imageContainer {
+  max-width: 95dvw;
+  width: 100%;
+  position: relative;
+  aspect-ratio: 1.5 / 1;
+  border-radius: 5px;
+}
+.image {
+  aspect-ratio: 1.5 / 1;
+  border-radius: 10px;
+}
+.caption {
+  margin-top: 5px;
+  text-align: center;
+  opacity: 0.6;
+  font-size: 0.75rem;
+  font-family: var();
+}
+
+.p {
+  margin-top: 1rem;
+}
+
+.footer {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  opacity: 0.6;
+}
+
+.source {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.backLink {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+button.backLinkButton {
+  padding: 10px 12px;
+  height: 36px;
+  width: 36px;
+  border-radius: 36px;
+}
+@media screen and (max-width: 575px) {
+  .backLink {
+    position: inherit;
+    align-self: flex-start;
+    margin-bottom: 10px;
+  }
+  .figure {
+    width: 100%;
+  }
+}
