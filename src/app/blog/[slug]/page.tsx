@@ -5,18 +5,16 @@ import { SSGButton } from '@/app/components/Button';
 import ChevronLeft from '@/app/icons/chevron-left.svg';
 import Link from 'next/link';
 import blogs from './blogs.json';
-import type { Metadata, ResolvingMetadata } from 'next';
+import type { Metadata } from 'next';
 
-interface BlogPostPageProps {
-  params: {
-    slug: string;
-  };
-}
+type BlogPostPageProps = {
+  params: Promise<{ slug: string }>;
+};
 
 export async function generateMetadata({
   params,
 }: BlogPostPageProps): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const blogData = blogs[slug as keyof typeof blogs];
 
   // Return the dynamic metadata
@@ -28,7 +26,7 @@ export async function generateMetadata({
       title: blogData.title,
       description: blogData.summary,
       publishedTime: blogData.publishDate,
-      url: `https://reframedeye.com/blog/${params.slug}`,
+      url: `https://reframedeye.com/blog/${slug}`,
       images: [
         {
           url: `https://reframedeye.com/images/blog/${blogData.localImgFileName}`,
@@ -39,7 +37,7 @@ export async function generateMetadata({
 }
 
 export default async function BlogPost({ params }: BlogPostPageProps) {
-  const { slug } = params;
+  const { slug } = await params;
   const blogData = blogs[slug as keyof typeof blogs];
 
   return (
