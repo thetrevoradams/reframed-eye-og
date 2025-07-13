@@ -26,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="msvalidate.01" content="B34BF51054D14E43B4FFDB6ACD1231C0" />
+      </head>
       <body className={`${marcellus.variable} ${manrope.variable}`}>
         <GoogleTagManager gtmId={GTM_ID} />
         <Script id="gtm" strategy="afterInteractive">
