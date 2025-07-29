@@ -102,7 +102,7 @@ const Footer = () => {
             <div className={style.row}>
               <a
                 aria-label="ReframedEye Facebook page"
-                href="https://www.facebook.com/profile.php?id=61561251600120"
+                href="https://facebook.com/reframedeye"
               >
                 <Facebook />
               </a>
