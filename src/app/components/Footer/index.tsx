@@ -74,7 +74,7 @@ const Footer = () => {
               >
                 3508 S 25th E
                 <br />
-                Idaho Falls, ID 84331
+                Idaho Falls, ID 83404
               </a>
             </div>
             <div className={style.iconWrapper}>
