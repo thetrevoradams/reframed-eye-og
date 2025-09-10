@@ -28,14 +28,6 @@ const Footer = () => {
     setMapUrl(_mapUrl);
   }, []);
 
-  const fetchReviews = async () => {
-    const resp = await fetch('/api/reviews');
-    // const resp = await fetch(
-    //   'https://mybusiness.googleapis.com/v4/accounts/16425584471253034315/locations/ChIJ8Rp4W2pfVFMR2UiJ2lktaAI/reviews'
-    // );
-    console.log('resp', resp);
-  };
-
   return (
     <>
       <footer className={style.footer}>
@@ -151,7 +143,6 @@ const Footer = () => {
           Record Request Form
         </a>
       </SectionGradientContainer>
-      <a onClick={fetchReviews}>Get Reviews</a>
     </>
   );
 };
