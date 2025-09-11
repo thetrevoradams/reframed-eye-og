@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '../Button';
 import SectionGradientContainer from '../SectionGradientContainer';
 import SectionText from '../SectionText';
@@ -8,8 +8,26 @@ import SimpleModal from '../SimpleModal';
 import { Text } from '../Text';
 import Image from 'next/image';
 
+interface ReviewType {
+  id: number;
+  reviewer_name: string;
+  text: string;
+  rating: number;
+}
+
 const Testimonials = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [reviews, setReviews] = useState<ReviewType[]>();
+
+  useEffect(() => {
+    fetch('/api/reviews')
+      .then(data => data.json())
+      .then(data => {
+        if (data) {
+          setReviews(data);
+        }
+      });
+  });
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -23,18 +41,14 @@ const Testimonials = () => {
         noHorizontalPadding
       />
       <div className={style.testimonialsWrapper}>
-        <TestimonialCard
-          content="Dr. Olsen is a very good optometrist. He is very knowledgeable and thorough with every aspect of eye care. Our kids have really appreciated him as well. He is very patient with them and has also given our kids very good results."
-          author="Kory Hunter"
-        />
-        <TestimonialCard
-          content="I made the change to Dr. Olsen this year, and I am glad! Dr. Olsen listened to me and encouraged me to try some contacts out for a few days before ordering. He even made sure I had a prescription for glasses in case I wanted to order those too. He is amazing!"
-          author="Brandi Klingler"
-        />
-        <TestimonialCard
-          content="I am very impressed with Dr. Olsen's approach. He explains things clearly and is good at answering my questions. I get very thorough exams because of some of my health issues I am always very satisfied with my treatment when I leave there."
-          author="Barbara Wilkerson"
-        />
+        {reviews?.map(({ id, text, reviewer_name: reviewerName, rating }) => (
+          <TestimonialCard
+            key={id}
+            content={text}
+            author={reviewerName}
+            rating={rating}
+          />
+        ))}
       </div>
       <Button aria-haspopup onClick={openModal} className={style.bioTriggerBtn}>
         Read Dr. Olsen&apos;s Bio
