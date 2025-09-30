@@ -7,6 +7,7 @@ import style from './testimonials.module.css';
 import SimpleModal from '../SimpleModal';
 import { Text } from '../Text';
 import Image from 'next/image';
+import { useReviews } from '@/app/hooks/use-reviews';
 
 interface ReviewType {
   id: number;
@@ -17,17 +18,7 @@ interface ReviewType {
 
 const Testimonials = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [reviews, setReviews] = useState<ReviewType[]>();
-
-  useEffect(() => {
-    fetch('/api/reviews')
-      .then(data => data.json())
-      .then(data => {
-        if (data) {
-          setReviews(data);
-        }
-      });
-  });
+  const { reviews } = useReviews();
 
   const openModal = () => {
     setIsModalOpen(true);

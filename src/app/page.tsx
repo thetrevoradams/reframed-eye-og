@@ -11,6 +11,9 @@ import FabList from './components/FabList';
 import Head from 'next/head';
 import { useRef } from 'react';
 // import NowHiringModal from './components/NowHiringModal';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 export default function Home() {
   const serviceSectionRef = useRef<HTMLElement>(null);
@@ -29,7 +32,9 @@ export default function Home() {
         <FabList />
         <Header serviceSectionRef={serviceSectionRef} />
         <BookAppointment />
-        <Testimonials />
+        <QueryClientProvider client={queryClient}>
+          <Testimonials />
+        </QueryClientProvider>
         <OurServices ref={serviceSectionRef} />
         <OrderContacts />
         <Footer />
