@@ -23,7 +23,10 @@ export default function LowVision() {
           }
           className={localStyles.lowVisionContent}
         />
-        <a href={phoneNumberLink} className={localStyles.lowVisionContent}>
+        <a
+          href={`tel:${phoneNumberLink}`}
+          className={localStyles.lowVisionContent}
+        >
           <Button>Call Now</Button>
         </a>
         <Link href="/" className={localStyles.lowVisionContent}>

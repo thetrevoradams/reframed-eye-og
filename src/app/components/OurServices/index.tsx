@@ -4,6 +4,7 @@ import ServiceCard from '../ServiceCard';
 import style from './services.module.css';
 import { Button } from '../Button';
 import { noInsuranceLink } from '@/app/utils/constants';
+import Link from 'next/link';
 
 const OurServices = forwardRef(function OurServices(
   _,
@@ -37,11 +38,13 @@ const OurServices = forwardRef(function OurServices(
             heading="Pediatric Eye Care"
             content="Our kid-friendly office welcomes patients of all ages."
           />
-          <ServiceCard
-            imageSrc="/images/service_lowVision.png"
-            heading="Low Vision"
-            content="Helping individuals with poor vision use visual aids to enhance their quality of life."
-          />
+          <Link href="/blog/living-with-visual-impairment">
+            <ServiceCard
+              imageSrc="/images/service_lowVision.png"
+              heading="Low Vision"
+              content="Helping individuals with poor vision use visual aids to enhance their quality of life."
+            />
+          </Link>
         </div>
       </div>
       <a

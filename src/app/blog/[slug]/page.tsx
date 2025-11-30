@@ -1,11 +1,13 @@
 import styles from './blogPost.module.css';
 import Image from 'next/image';
 import { Text } from '@/app/components/Text';
-import { SSGButton } from '@/app/components/Button';
+import { Button, SSGButton } from '@/app/components/Button';
 import ChevronLeft from '@/app/icons/chevron-left.svg';
 import Link from 'next/link';
 import blogs from './blogs.json';
 import type { Metadata } from 'next';
+import { phoneNumberLink } from '@/app/utils/constants';
+import CallLink from '@/app/components/CallLink';
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>;
@@ -101,6 +103,9 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
           </Text>
         )}
       </footer>
+      <div className={styles.callNowLink}>
+        <CallLink />
+      </div>
     </main>
   );
 }
