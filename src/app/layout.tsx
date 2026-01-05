@@ -5,15 +5,16 @@ import { GoogleTagManager } from '@next/third-parties/google';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Reframed Eye Optometry',
+  title:
+    'Reframed Eye Optometry | Eye Exams & Glasses | Idaho Falls Optometrist',
   description:
-    'Comprehensive eye care services at Reframed Eye, a new optometry practice coming soon to Idaho Falls, Idaho. Glasses, contacts, eye exams, low vision evaluations and more! Schedule online or call 208-557-3222.',
+    'Comprehensive eye care services at Reframed Eye, a new optometry practice in Idaho Falls, Idaho. Glasses, contacts, eye exams, low vision evaluations and more! Schedule online or call 208-557-3222.',
   openGraph: {
     type: 'website',
     url: 'https://reframedeye.com',
     title: 'Reframed Eye Optometry',
     description:
-      'Comprehensive eye care services at Reframed Eye, a new optometry practice coming soon to Idaho Falls, Idaho. Glasses, contacts, eye exams, low vision evaluations and more! Schedule online or call 208-557-3222.',
+      'Comprehensive eye care services at Reframed Eye, a new optometry practice in Idaho Falls, Idaho. Glasses, contacts, eye exams, low vision evaluations and more! Schedule online or call 208-557-3222.',
     images: 'https://reframedeye.com/logo.png',
   },
 };
